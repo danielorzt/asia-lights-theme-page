@@ -16,16 +16,28 @@ export default defineConfig({
 		main: "./src/main.jsx"
 	},
 	resolve: {
-		extensions: ["...", ".ts", ".tsx", ".jsx"]
+		extensions: ["...", ".ts", ".tsx", ".jsx"] // .js está cubierto por "..."
 	},
 	module: {
 		rules: [
 			{
-				test: /\.svg$/,
-				type: "asset"
+				// Regla para imágenes y SVGs
+				test: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
+				type: "asset/resource", // Copia el archivo a la carpeta de salida y exporta la URL
+			},
+			{
+				// Regla para videos y audio
+				test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/i,
+				type: "asset/resource", // Copia el archivo a la carpeta de salida y exporta la URL
+			},
+			{
+				// Regla para fuentes (si las usas localmente)
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: "asset/resource",
 			},
 			{
 				test: /\.(jsx?|tsx?)$/,
+				exclude: /node_modules/,
 				use: [
 					{
 						loader: "builtin:swc-loader",
@@ -49,14 +61,14 @@ export default defineConfig({
 				]
 			},
 			{
+				// Regla CSS CORREGIDA para Tailwind
 				test: /\.css$/,
 				use: [
-					'style-loader',
-					'css-loader',
 					{
-						loader: 'postcss-loader'
+						loader: 'postcss-loader',
 					}
-				]
+				],
+				type: 'css',
 			}
 		]
 	},
@@ -76,5 +88,13 @@ export default defineConfig({
 	},
 	experiments: {
 		css: true
+	},
+	devServer: {
+		hot: true,
+		port: 8080,
+		historyApiFallback: true,
+		static: {
+			directory: './', // Servir estáticos desde la raíz
+		},
 	}
 });

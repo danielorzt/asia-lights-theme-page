@@ -1,30 +1,28 @@
-import React from "react";
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import React from 'react';
+import NavBar from './components/NavBar'; // Importa la NavBar
+import Hero from './components/Hero';
+import Cities from './components/Cities';
+import Featured from './components/Featured';
+import Attention from './components/Attention';
+import Gallery from './components/Gallery';
+import NeonSignsShowcase from './components/NeonSignsShowcase';
+import TechPulseAsia from './components/TechPulseAsia';
+import CulturalEchoes from './components/CulturalEchoes';
+import Footer from './components/Footer';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className="App">
-			<div>
-				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Rspack + React</h1>
-			<div className="card">
-				<button type="button" onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Rspack and React logos to learn more
-			</p>
+		<div className="bg-gray-900 text-gray-100">
+			<NavBar /> {/* Añade la NavBar aquí, fuera de cualquier sección principal */}
+			<Hero />
+			<Cities />
+			<Featured />
+			<Attention />
+			<Gallery />
+			<NeonSignsShowcase />
+			<TechPulseAsia />
+			<CulturalEchoes />
+			<Footer />
 		</div>
 	);
 }
