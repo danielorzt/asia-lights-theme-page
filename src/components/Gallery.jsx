@@ -16,29 +16,28 @@ const galleryItemsData = [
         id: 'tokyo',
         title: 'Tokio Dinámico',
         videoSrc: tokyoVideo,
-        // REEMPLAZA ESTA URL con la ruta a tu imagen de previsualización real
-        posterSrc: 'https://placehold.co/600x400/1A202C/E2E8F0?text=Tokio+Preview&font=raleway',
+        posterSrc: 'https://cdn.pixabay.com/photo/2017/03/12/21/30/tokyo-2138168_1280.jpg',
         description: 'Neón y tradición en la metrópolis japonesa.',
     },
     {
         id: 'seoul',
         title: 'Seúl Innovador',
         videoSrc: seoulVideo,
-        posterSrc: 'https://placehold.co/600x400/2D3748/F7FAFC?text=Seúl+Preview&font=raleway',
+        posterSrc: 'https://cdn.pixabay.com/photo/2022/08/05/05/59/seoul-7366037_1280.jpg',
         description: 'K-Pop, tecnología y palacios ancestrales.',
     },
     {
         id: 'hongkong',
         title: 'Hong Kong Vibrante',
         videoSrc: hongKongVideo,
-        posterSrc: 'https://placehold.co/600x400/4A5568/EDF2F7?text=Hong+Kong+Preview&font=raleway',
+        posterSrc: 'https://cdn.pixabay.com/photo/2020/12/17/00/43/skyscrapers-5838029_1280.jpg',
         description: 'Rascacielos imponentes y un puerto legendario.',
     },
     {
         id: 'osaka',
         title: 'Osaka Deliciosa',
         videoSrc: osakaVideo,
-        posterSrc: 'https://placehold.co/600x400/718096/E2E8F0?text=Osaka+Preview&font=raleway',
+        posterSrc: 'https://cdn.pixabay.com/photo/2020/11/24/10/37/city-5772121_1280.jpg',
         description: 'La capital gastronómica de Japón y su castillo.',
     },
 ];
